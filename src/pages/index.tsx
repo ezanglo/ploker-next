@@ -10,12 +10,14 @@ import { useTheme as useNextTheme } from 'next-themes';
 import { useTheme } from '@nextui-org/react';
 import { SunIcon } from '@/components/icons/SunIcon'
 import { MoonIcon } from '@/components/icons/MoonIcon'
+import CreateGameModal from '@/components/navbar/CreateGameModal'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const { setTheme } = useNextTheme();
   const { isDark, type } = useTheme();
+
   return (
     <Layout>
       <Navbar variant="sticky">
@@ -27,15 +29,6 @@ export default function Home() {
           </Text>
         </Navbar.Brand>
         <Navbar.Content>
-          <Button light auto>
-            Signup
-          </Button>
-          <Button light auto>
-            Login
-          </Button>
-          <Button flat>
-            Start a game
-          </Button>
           <Button
             ripple={false}
             light auto
@@ -44,6 +37,7 @@ export default function Home() {
             }
             icon={isDark ? <SunIcon /> : <MoonIcon />}
           />
+          <CreateGameModal />
         </Navbar.Content>
       </Navbar>
       <Box as="main">

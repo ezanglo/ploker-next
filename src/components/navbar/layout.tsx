@@ -5,9 +5,8 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => (
-    <Box
+    <Box className="max-w-full"
         css={{
-            maxW: '100%',
             background: '$background',
         }}
     >

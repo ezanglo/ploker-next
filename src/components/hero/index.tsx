@@ -3,12 +3,13 @@ import React from 'react';
 import { CheckIcon } from '../icons/CheckIcon';
 import { Box } from '../styles/Box';
 import { Flex } from '../styles/Flex';
+import CreateGameModal from '../navbar/CreateGameModal';
 
 export const Hero = () => {
     return (
         <>
-            <Flex className='gap-3 flex-col content-center justify-center items-center w-full sm:flex-row sm:mt-20'>
-                <Box className='flex flex-col gap-4'>
+            <Flex className='gap-3 flex-col content-center justify-center items-center sm:flex-row sm:mt-20'>
+                <Box className='flex flex-col gap-4 text-center sm:text-start'>
                     <Box className='max-w-xl'>
                         <Text h1 className='inline'>
                             Plan Smarter, Not Harder with{' '}
@@ -18,13 +19,12 @@ export const Hero = () => {
                         </Text>
                     </Box>
 
-                    <Text span size="lg" className='text-gray-400 max-w-xl'>
-                        Sprint to success with this agile-friendly planning tool
+                    <Text span size="lg" className='text-gray-400 max-w-lg'>
+                        Take your Agile and Scrum development to the next level with our Planning Poker tool
                     </Text>
 
                     <Flex className='gap-4 pt-2' wrap={'wrap'}>
-                        <Input placeholder="Enter your name" size="lg" />
-                        <Button>Start a game</Button>
+                        <CreateGameModal />
                     </Flex>
                 </Box>
                 <Box className='max-w-3xl'>
